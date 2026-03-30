@@ -15,6 +15,7 @@ int main() {
   int touristSpots1, touristSpots2;
   float populationDensity1, populationDensity2;
   float pib_per_capita1, pib_per_capita2;
+  float superPower1, superPower2;
 
   // Área para entrada de dados
   printf("Vamos começar cadastrando 2 cartas\n");
@@ -47,6 +48,9 @@ int main() {
   //Calculo de PIB per capita com conversão do PIB em bilhões
   pib_per_capita1 = (pib1 * 1000000000) / population1;
 
+  //Calculo do Super poder
+  superPower1 = (float)(population1 + area1 + pib1 + touristSpots1 + pib_per_capita1 + (1/populationDensity1));
+
   //CARD 2
   printf("\n--- CARTA 2 ---\n");
   printf("Informe o Estado (A-H): ");
@@ -72,6 +76,7 @@ int main() {
 
   populationDensity2 = population2 / area2;
   pib_per_capita2 = (pib2 * 1000000000) / population2;
+  superPower2 = (float)(population2 + area2 + pib2 + touristSpots2 + pib_per_capita2 + (1/populationDensity2));
 
   // Área para exibição dos dados da cidade
   // EXIBIÇÃO CARD 1
@@ -100,7 +105,20 @@ int main() {
   printf("Densidade Populacional: %.2f hab/km²\n",populationDensity2);
   printf("PIB per Capita: %.2f reais",pib_per_capita2);
 
-  printf("\n\n\n"); //Printa 3 quebras de linha
+  printf("\n\n"); //Printa 2 quebras de linha
+  printf("\n=====================\n");
+
+  //Exibe resultado final da comparação entre cartas
+  printf("Comparação de Cartas:\n");
+  printf("População: Carta %d venceu (%d)\n", (population1 > population2 ? 1 : 2), (population1 > population2));
+  printf("Área: Carta %d venceu (%d)\n", (area1 > area2 ? 1 : 2), (area1 > area2));
+  printf("PIB: Carta %d venceu (%d)\n", (pib1 > pib2 ? 1 : 2), (pib1 > pib2));
+  printf("Pontos Turísticos: Carta %d venceu (%d)\n", (touristSpots1 > touristSpots2 ? 1 : 2), (touristSpots1 > touristSpots2));
+  printf("Densidade Populacional: Carta %d venceu (%d)\n", (populationDensity1 < populationDensity2 ? 1 : 2), (populationDensity1 < populationDensity2));
+  printf("PIB per Capita: Carta %d venceu (%d)\n", (pib_per_capita1 > pib_per_capita2 ? 1 : 2), (pib_per_capita1 > pib_per_capita2));
+  printf("Super Poder: Carta %d venceu (%d)\n", (superPower1 > superPower2 ? 1 : 2), (superPower1 > superPower2));
+
+  printf("\n\n\n");
 
   return 0;
 } 
