@@ -18,8 +18,8 @@ int main() {
   printf("Vamos começar cadastrando 2 cartas\n");
   //CARD 1
   printf("\n--- CARTA 1 ---\n");
-  printf("Informe o Estado (A-H): ");
-  scanf(" %c", &state1);
+  printf("Informe o Estado (A-H): "); //Printa o comando do input aguardado
+  scanf(" %c", &state1); //Aguarda o input do usuário e armazena na variável
 
   printf("Informe o Código: ");
   scanf("%s", cardCode1);
@@ -63,6 +63,7 @@ int main() {
   scanf("%d", &touristSpots2);
 
   // Área para exibição dos dados da cidade
+  // EXIBIÇÃO CARD 1
   printf("\n---------------------\n");
   printf("Carta 1:\n");
   printf("Estado: %c\n",state1);
@@ -73,6 +74,7 @@ int main() {
   printf("PIB: %.2f bilhões de reais\n",pib1);
   printf("Número de Pontos Turísticos: %d\n",touristSpots1);
 
+  // EXIBIÇÃO CARD 2
   printf("\n---------------------\n");
   printf("Carta 2:\n");
   printf("Estado: %c\n",state2);
@@ -83,7 +85,7 @@ int main() {
   printf("PIB: %.2f bilhões de reais\n",pib2);
   printf("Número de Pontos Turísticos: %d\n",touristSpots2);
 
-  printf("\n\n\n");
+  printf("\n\n\n"); //Printa 3 quebras de linha
 
   return 0;
 } 
